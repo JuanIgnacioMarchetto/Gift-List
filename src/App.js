@@ -1,6 +1,6 @@
 import React from 'react';
-import GiftList from './GiftList';
-
+import GiftList from './components/GiftList';
+import './App.css'
 const App = () => {
   return (
     <div>
