@@ -9,8 +9,26 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
  
 }
+.buttondelete{
+  font:bolder;
+  color: #b71c1c;
+  background:none;
+  border: #2e7d32 solid 4px;
+  margin-left: 2em;
+  padding: 5px;
+}
+.buttonRemoveall{position: relative;
+  bottom: -10px;  
+  color: #2e7d32 ;
+  background:none;
+  border: #b71c1c solid 4px;
+}
+
+
 h1 {
   color: #b71c1c;
   margin-top: 155px;

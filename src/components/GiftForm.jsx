@@ -19,8 +19,8 @@ const GiftForm = ({ onAddGift }) => {
 
     return (
         <form onSubmit={handleSubmit}>
-            <label>
-                Add Gift
+            <label >
+                <h3 className='H3'>Add🎁</h3>
                 <input type="text" value={newGift} onChange={handleChange} />
             </label>
             <AddButton onClick={handleSubmit} />

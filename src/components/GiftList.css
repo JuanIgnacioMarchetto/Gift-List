@@ -4,18 +4,18 @@
   box-sizing: border-box;
 }
 
-
-.paper { 
-  background: url(./papelviejo.jpg) ;
-background-repeat: no-repeat;
- background-size: contain;
+.paper {
+  background: url(./papelviejo.jpg);
+  background-repeat: no-repeat;
+  background-size: contain;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; 
+  height: 100vh;
 }
 
-.lista {position: absolute;
+.lista {
+  position: absolute;
   top: 250px;
   display: flex;
   flex-direction: column;
@@ -26,4 +26,57 @@ ul {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.buttondelete {
+  font-weight: bold;
+  color: #b71c1c;
+  background: none;
+  border: #2e7d32 solid 4px;
+  margin-left: 2em;
+  padding: 5px;
+}
+
+.buttonRemoveall {
+  position: relative;
+  bottom: -10px;
+  color: #2e7d32;
+  background: none;
+  border: #b71c1c solid 4px;
+}
+
+h1 {
+  color: #b71c1c;
+  margin-top: 155px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  border-bottom: 5px solid #b71c1c;
+  border-radius: 5px;
+  margin: 10px;
+  padding: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #2e7d32;
+}
+
+.H3 {
+  font-weight:bold;
+  position: absolute;
+  left: 500px;
+  
+bottom: 116px;
+}
+
+.H3:nth-child(odd) {
+  color: #b71c1c;
+}
+
+.H3:nth-child(even) {
+  color: #2e7d32;
 }
