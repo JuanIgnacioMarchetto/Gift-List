@@ -6,7 +6,6 @@
 
 
 .paper { 
-  margin-top: 15px;
   background: url(./papelviejo.jpg) ;
 background-repeat: no-repeat;
  background-size: contain;
@@ -16,7 +15,8 @@ background-repeat: no-repeat;
   height: 100vh; 
 }
 
-.lista {
+.lista {position: absolute;
+  top: 250px;
   display: flex;
   flex-direction: column;
 }

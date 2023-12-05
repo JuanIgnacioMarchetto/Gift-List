@@ -20,7 +20,7 @@ const GiftForm = ({ onAddGift }) => {
     return (
         <form onSubmit={handleSubmit}>
             <label>
-                Nuevo Regalo:
+                Add Gift
                 <input type="text" value={newGift} onChange={handleChange} />
             </label>
             <AddButton onClick={handleSubmit} />
