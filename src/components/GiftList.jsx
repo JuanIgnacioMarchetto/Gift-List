@@ -8,13 +8,16 @@ const GiftList = () => {
     ]);
 
     return (
-        <div>
-            <h2>Gift List</h2>
-            <ul>
-                {gifts.map(gift => (
-                    <li key={gift.id}>{gift.name}</li>
-                ))}
-            </ul>
+        <div className='paper'>
+            <div className=''>
+                <ul>
+                    <h2>Gift List</h2>
+                    {gifts.map(gift => (
+                        <li key={gift.id}>{gift.name}</li>
+                    ))}
+                </ul>
+            </div>
+
         </div>
     );
 };

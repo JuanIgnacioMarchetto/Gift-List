@@ -1,16 +1,29 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+.paper { 
+  margin-top: 15px;
+  background: url(./papelviejo.jpg) ;
+background-repeat: no-repeat;
+ background-size: contain;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; 
+}
+
+.lista {
+  display: flex;
+  flex-direction: column;
+}
+
 ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  li {
-    background-color: #d4f9e8; /* Verde claro para el fondo del regalo */
-    border: 2px solid #2e7d32; /* Verde más oscuro para el borde */
-    border-radius: 5px;
-    margin: 10px;
-    padding: 10px;
-    display: inline-block;
-    font-size: 18px;
-    font-weight: bold;
-    color: #2e7d32; /* Verde oscuro para el texto */
-  }
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
