@@ -25,7 +25,7 @@ const GiftList = () => {
   return (
     <div className="paper">
       {gifts.length === 0 ? (
-        <p className="lista">No hay regalos aún. ¡Agrega algunos!</p>
+        <p className="lista" style={{ marginTop: '20px' }}>No gifts yet. Add some!</p>
       ) : (
         <ul className="lista">
           {gifts.map((gift) => (
@@ -40,6 +40,7 @@ const GiftList = () => {
       <GiftForm onAddGift={addGift} />
     </div>
   );
+  
 };
 
 export default GiftList;
