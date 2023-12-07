@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import GiftForm from './GiftForm';
 import '../App.css'; 
-import './GiftList.css'
+import './GiftList.css';
 
 const GiftList = () => {
   const [gifts, setGifts] = useState([
@@ -10,7 +10,11 @@ const GiftList = () => {
   ]);
 
   const addGift = (newGift) => {
-    setGifts([...gifts, { id: gifts.length + 1, name: newGift }]);
+    if (newGift.trim() !== '' && !gifts.some(gift => gift.name.toLowerCase() === newGift.toLowerCase())) {
+      setGifts([...gifts, { id: gifts.length + 1, name: newGift }]);
+    } else {
+      console.log('Error: Regalo vacío o repetido');
+    }
   };
 
   const removeGift = (id) => {
@@ -25,7 +29,7 @@ const GiftList = () => {
   return (
     <div className="paper">
       {gifts.length === 0 ? (
-        <p className="lista" style={{ marginTop: '20px' }}>No gifts yet. Add some!</p>
+        <p className="lista" style={{ marginTop: '20px' }}>No hay regalos aún. ¡Agrega algunos!</p>
       ) : (
         <ul className="lista">
           {gifts.map((gift) => (
@@ -40,7 +44,6 @@ const GiftList = () => {
       <GiftForm onAddGift={addGift} />
     </div>
   );
-  
 };
 
 export default GiftList;
