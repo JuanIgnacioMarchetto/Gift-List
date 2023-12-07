@@ -29,7 +29,7 @@ const GiftList = () => {
   return (
     <div className="paper">
       {gifts.length === 0 ? (
-        <p className="lista" style={{ marginTop: '20px' }}>No hay regalos aún. ¡Agrega algunos!</p>
+        <p className="lista" style={{ marginTop: '20px' }}>there are no presents, add some!!</p>
       ) : (
         <ul className="lista">
           {gifts.map((gift) => (
