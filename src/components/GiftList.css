@@ -80,3 +80,10 @@ bottom: 116px;
 .H3:nth-child(even) {
   color: #2e7d32;
 }
+
+.empty-message {
+  color: #b71c1c;
+  font-weight: bold;
+  margin-top: 20px;
+  text-align: center;
+}
