@@ -40,7 +40,7 @@ const GiftList = () => {
           ))}
         </ul>
       )}
-      <button className='buttonRemoveall' onClick={removeAllGifts}>Eliminar Todos</button>
+      <button className='buttonRemoveall' onClick={removeAllGifts}>Eliminate All</button>
       <GiftForm onAddGift={addGift} />
     </div>
   );
