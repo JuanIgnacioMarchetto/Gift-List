@@ -1,14 +1,24 @@
 form {
-    margin-top: 20px;
-    text-align: center;
-  }
-  
-  label {
-    color: darkgreen;
-  }
-  
-  input {
-    padding: 2px;
-    margin-right: 6px;
-  }
-  
+  margin-top: 2em;
+  text-align: center;
+}
+
+.label-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 0.5em;
+}
+
+label {
+  color: darkgreen;
+  display: block;
+  margin-bottom: 0.5em;
+}
+
+input {
+  padding: 0.5em;
+  margin-bottom: 0.5em;
+  width: 60%;
+  max-width: 300px;
+}

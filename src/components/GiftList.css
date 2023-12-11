@@ -5,20 +5,22 @@
 }
 
 .paper {
+  
+  width: 50vw;
   background: url(./papelviejo.jpg);
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  height: 100vh;
 }
 
 .lista {
-  position: absolute;
-  top: 250px;
   display: flex;
   flex-direction: column;
+  width: 100%;
+  margin-top:5em;
+  padding-bottom: 1em;
 }
 
 ul {
@@ -33,57 +35,19 @@ ul {
   color: #b71c1c;
   background: none;
   border: #2e7d32 solid 4px;
-  margin-left: 2em;
-  padding: 5px;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  padding: 0.5em;
+  font-size: smaller;
 }
 
 .buttonRemoveall {
   position: relative;
-  bottom: -10px;
+  bottom: -0.5em;  
   color: #2e7d32;
   background: none;
   border: #b71c1c solid 4px;
-}
-
-h1 {
-  color: #b71c1c;
-  margin-top: 155px;
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-li {
-  border-bottom: 5px solid #b71c1c;
-  border-radius: 5px;
-  margin: 10px;
-  padding: 10px;
-  font-size: 18px;
-  font-weight: bold;
-  color: #2e7d32;
-}
-
-.H3 {
-  font-weight:bold;
-  position: absolute;
-  left: 500px;
-  
-bottom: 116px;
-}
-
-.H3:nth-child(odd) {
-  color: #b71c1c;
-}
-
-.H3:nth-child(even) {
-  color: #2e7d32;
-}
-
-.empty-message {
-  color: #b71c1c;
-  font-weight: bold;
-  margin-top: 20px;
-  text-align: center;
+  font-size: smaller;
+  margin-top: 1em;
+  margin-bottom: 1em;
 }

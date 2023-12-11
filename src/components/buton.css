@@ -1,7 +1,7 @@
-button{
+button {
     color: red;
-    border: green solid 4px; margin-right: 5px;
-    background: none
-    ;
+    border: green solid 4px;
+    margin-right: 0.5em;
+    background: none;
     font-size: smaller;
-}
+  }
