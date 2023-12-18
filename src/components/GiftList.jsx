@@ -25,7 +25,10 @@ const GiftList = () => {
   };
 
   const addGift = (newGift, quantity, imageLink, recipient) => {
-    setGifts([...gifts, { id: gifts.length + 1, name: newGift, quantity, imageLink, recipient }]);
+    setGifts((prevGifts) => [
+      ...prevGifts,
+      { id: Date.now(), name: newGift, quantity, imageLink, recipient },
+    ]);
   };
 
   const removeGift = (id) => {
@@ -56,7 +59,7 @@ const GiftList = () => {
             <li key={gift.id}>
               {gift.name} - Cantidad: {gift.quantity} - Destinatario: {gift.recipient}
               <button onClick={() => removeGift(gift.id)} className='buttondelete'> X </button>
-              <button onClick={openModal} className='buttonEdit'> Editar </button>
+              <button onClick={() => editGift(gift.id)} className='buttonEdit'> Editar </button>
             </li>
           ))}
         </ul>

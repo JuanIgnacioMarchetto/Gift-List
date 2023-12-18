@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import AddButton from './Button';
 import './GiftForm.css';
 
-const GiftForm = ({ onAddGift }) => {
+const GiftForm = ({ onAddGift, onEditGift, editGiftId }) => {
   const [newGift, setNewGift] = useState('');
   const [quantity, setQuantity] = useState(1);
   const [imageLink, setImageLink] = useState('');
@@ -34,7 +34,6 @@ const GiftForm = ({ onAddGift }) => {
       setRecipient('');
     }
   };
-
   return (
     <form className="mt-8 text-center" onSubmit={handleSubmit}>
       <div className="flex flex-col items-center mt-4">
