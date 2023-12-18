@@ -1,16 +1,31 @@
-
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import GiftForm from './GiftForm';
+import Modal from './Modal';
 import '../App.css'; 
 import './GiftList.css';
 
 const GiftList = () => {
-  const [gifts, setGifts] = useState([
-    { id: 1, name: 'Regalo 1', quantity: 1 },
-  ]);
+  const [gifts, setGifts] = useState(() => {
+    const savedGifts = localStorage.getItem('gifts');
+    return savedGifts ? JSON.parse(savedGifts) : [{ id: 1, name: 'Regalo 1', quantity: 1, imageLink: '', recipient: '' }];
+  });
 
-  const addGift = (newGift, quantity) => {
-    setGifts([...gifts, { id: gifts.length + 1, name: newGift, quantity }]);
+  useEffect(() => {
+    localStorage.setItem('gifts', JSON.stringify(gifts));
+  }, [gifts]);
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
+  const addGift = (newGift, quantity, imageLink, recipient) => {
+    setGifts([...gifts, { id: gifts.length + 1, name: newGift, quantity, imageLink, recipient }]);
   };
 
   const removeGift = (id) => {
@@ -22,22 +37,37 @@ const GiftList = () => {
     setGifts([]);
   };
 
+  const editGift = (id, newName, newQuantity, newImageLink, newRecipient) => {
+    const updatedGifts = gifts.map((gift) => 
+      gift.id === id
+        ? { ...gift, name: newName, quantity: newQuantity, imageLink: newImageLink, recipient: newRecipient }
+        : gift
+    );
+    setGifts(updatedGifts);
+  };
+
   return (
     <div className="paper">
       {gifts.length === 0 ? (
-        <p className="lista" style={{ marginTop: '20px' }}>No hay regalos aún. ¡Agrega algunos!</p>
+        <p className="empty-message" style={{ marginTop: '20px' }}>No hay regalos aún. ¡Agrega algunos!</p>
       ) : (
         <ul className="lista">
           {gifts.map((gift) => (
             <li key={gift.id}>
-              {gift.name} - Cantidad: {gift.quantity}
+              {gift.name} - Cantidad: {gift.quantity} - Destinatario: {gift.recipient}
               <button onClick={() => removeGift(gift.id)} className='buttondelete'> X </button>
+              <button onClick={openModal} className='buttonEdit'> Editar </button>
             </li>
           ))}
         </ul>
       )}
       <button className='buttonRemoveall' onClick={removeAllGifts}>Eliminar Todos</button>
-      <GiftForm onAddGift={addGift} />
+      <button className='buttonAdd' onClick={openModal}>Agregar Regalo</button>
+      {isModalOpen && (
+        <Modal closeModal={closeModal}>
+          <GiftForm onAddGift={addGift} />
+        </Modal>
+      )}
     </div>
   );
 };
